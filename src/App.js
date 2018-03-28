@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Modal from './Modal'
-
-
+import Modal from './Modal';
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      showModal: false
+    }
+  }
   render() {
     return (
       <div className="App">
