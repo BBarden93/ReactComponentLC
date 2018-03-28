@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Modal from './Modal';
 
@@ -9,6 +8,10 @@ class App extends Component {
     this.state = {
       showModal: false
     }
+  }
+
+  componentDidMount() {
+    console.log("App component mounted.")
   }
 
   handleShowModalClick() {
@@ -26,15 +29,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <button onClick={this.handleShowModalClick.bind(this)}>Show Modal</button>
-        {this.state.showModal && <Modal onClose={this.handleHideModalClick.bind(this)}/>}
+        {this.state.showModal && (
+          <Modal 
+            onClose={this.handleHideModalClick.bind(this)}
+            modalTitle={"This is a title"}
+            modalBody={"This is a body"}
+          />
+        )}
       </div>
     );
   }
