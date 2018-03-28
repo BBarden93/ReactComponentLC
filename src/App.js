@@ -18,6 +18,7 @@ class App extends Component {
     this.setState({
       showModal: true
     })
+    setTimeout(this.handleHideModalClick.bind(this), 5000)
   }
 
   handleHideModalClick() {
