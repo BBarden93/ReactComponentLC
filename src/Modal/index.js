@@ -5,7 +5,6 @@ class Modal extends React.Component {
     // runs once when component finsihes loading for the first time
     componentDidMount(){
         console.log("Modal has mounted.")
-        setTimeout(this.props.onClose, 5000)
     }
     componentWillUnmount(){
         console.log("Modal is about to unmount.")

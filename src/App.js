@@ -6,6 +6,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
+      currentDate: new Date(),
       showModal: false
     }
   }
@@ -17,6 +18,11 @@ class App extends Component {
   handleShowModalClick() {
     this.setState({
       showModal: true
+    })
+    setInterval(() => {
+      this.setState({
+        currentDate: new Date()
+      })
     })
   }
 
@@ -33,7 +39,7 @@ class App extends Component {
         {this.state.showModal && (
           <Modal 
             onClose={this.handleHideModalClick.bind(this)}
-            modalTitle={"This is a title"}
+            modalTitle={this.state.currentDate.toString()}
             modalBody={"This is a body"}
           />
         )}
