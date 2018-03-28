@@ -7,7 +7,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      showModal: false
+      showModal: true
     }
   }
   render() {
@@ -20,7 +20,9 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-      <Modal/>
+        {this.state.showModal && 
+          <Modal/>
+        }
       </div>
     );
   }
