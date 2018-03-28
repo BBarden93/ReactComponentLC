@@ -1,11 +1,11 @@
 import React from 'react'
 import './Modal.css'
 
-const Modal = () => {
+const Modal = (props) => {
     return (
         <div className="Modal">
          <div className="container">
-            <button>X</button>
+            <button onClick={props.onClose}>X</button>
             <div className="title">
                 <h1>Modal Showing Here</h1>
             </div>

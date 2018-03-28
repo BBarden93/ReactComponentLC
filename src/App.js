@@ -17,6 +17,12 @@ class App extends Component {
     })
   }
 
+  handleHideModalClick() {
+    this.setState({
+      showModal: false 
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -28,7 +34,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <button onClick={this.handleShowModalClick.bind(this)}>Show Modal</button>
-        {this.state.showModal && <Modal/>}
+        {this.state.showModal && <Modal onClose={this.handleHideModalClick.bind(this)}/>}
       </div>
     );
   }
